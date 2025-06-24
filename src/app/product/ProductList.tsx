@@ -69,7 +69,7 @@ export default function ProductList({ selectedCategory }: Props) {
     : products;
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
       {isLoading ? (
         skeletons.map((_, i) => (
           <motion.div
@@ -101,7 +101,7 @@ export default function ProductList({ selectedCategory }: Props) {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="bg-[#F3F3F3] border border-[#E0E0E0] rounded-2xl p-4 shadow-sm hover:shadow-md transition flex flex-col justify-between h-[380px]"
+                className="bg-[#F3F3F3] border border-[#E0E0E0] rounded-3xl p-4 shadow-sm hover:shadow-md transition flex flex-col justify-between h-[380px]"
               >
                 <Link href={`/product/${product.id}`}>
                   <motion.div
@@ -110,7 +110,7 @@ export default function ProductList({ selectedCategory }: Props) {
                     transition={{ duration: 0.2 }}
                   >
                     <motion.div
-                      className="relative w-full h-40 rounded-xl overflow-hidden bg-white"
+                      className="relative w-full h-45 rounded-2xl overflow-hidden bg-white"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.5 }}

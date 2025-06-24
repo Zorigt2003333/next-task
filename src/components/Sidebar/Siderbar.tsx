@@ -28,7 +28,7 @@ export default function Sidebar({ onSelectCategory }: SidebarProps) {
   ];
 
   const subcategoryMap: { [key: string]: string[] } = {
-    Хоол: ['TechPack'],
+    Хоол: ['electronics'],
   };
 
   const toggleMenu = (category: string) => {
@@ -43,8 +43,7 @@ export default function Sidebar({ onSelectCategory }: SidebarProps) {
 
   return (
     <>
-      {/* Mobile Menu Button */}
-      <div className="lg:hidden fixed top-4 right-58 z-50">
+      <div className="lg:hidden fixed top-3 right-23 z-50">
         <button
           onClick={toggleMobileMenu}
           className="p-2 bg-white rounded-full shadow-md text-gray-800 hover:bg-gray-100"
@@ -52,8 +51,6 @@ export default function Sidebar({ onSelectCategory }: SidebarProps) {
           <Menu size={22} />
         </button>
       </div>
-
-      {/* Desktop Sidebar */}
       <aside
         className="hidden lg:block w-80 bg-white p-4 rounded-2xl shadow-sm h-full transition-all duration-300"
         role="navigation"
@@ -109,8 +106,6 @@ export default function Sidebar({ onSelectCategory }: SidebarProps) {
           })}
         </ul>
       </aside>
-
-      {/* Mobile Sidebar */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.aside
@@ -122,7 +117,6 @@ export default function Sidebar({ onSelectCategory }: SidebarProps) {
             role="navigation"
             aria-label="Mobile Sidebar"
           >
-            {/* Хаах товч */}
             <button
               onClick={toggleMobileMenu}
               className="absolute top-4 right-4 p-2 text-gray-700 hover:text-gray-900"
@@ -167,7 +161,6 @@ export default function Sidebar({ onSelectCategory }: SidebarProps) {
                         (isActive ? <ChevronDown size={16} /> : <ChevronRight size={16} />)}
                     </motion.button>
 
-                    {/* Дэд ангиллууд */}
                     {isActive && hasSub && (
                       <AnimatePresence>
                         <motion.ul
@@ -206,8 +199,6 @@ export default function Sidebar({ onSelectCategory }: SidebarProps) {
           </motion.aside>
         )}
       </AnimatePresence>
-
-      {/* Overlay for Mobile */}
       {isMobileMenuOpen && <div onClick={toggleMobileMenu}></div>}
     </>
   );

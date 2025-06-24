@@ -14,7 +14,7 @@ export default function CartPage() {
   return (
     <>
       <Header />
-      <div className="pt-20 px-4 sm:px-6 lg:px-8 pb-12 min-h-screen bg-gray-50">
+      <div className="pt-20 px-4 sm:px-6 lg:px-8 pb-12 min-h-screen bg-[#F3F3F3]">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

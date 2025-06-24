@@ -12,7 +12,6 @@ export default function ProductSection({ selectedCategory }: Props) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate initial loading or data fetch
     const timer = setTimeout(() => setIsLoading(false), 500);
     return () => clearTimeout(timer);
   }, [selectedCategory]);
@@ -77,7 +76,7 @@ export default function ProductSection({ selectedCategory }: Props) {
       >
         <div className="flex items-center justify-between">
           <motion.h2 variants={itemVariants} className="text-lg font-semibold text-gray-900">
-            {selectedCategory || 'Бөөндье'}
+            {selectedCategory || 'Бүгд'}
           </motion.h2>
           <motion.select
             variants={itemVariants}
