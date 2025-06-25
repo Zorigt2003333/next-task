@@ -95,7 +95,7 @@ export default function ProductSection({ selectedCategory }: Props) {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="bg-white p-4 rounded-2xl shadow-sm flex-1"
+        className="bg-white p-4 rounded-3xl shadow-sm flex-1"
       >
         <ProductList selectedCategory={selectedCategory} />
       </motion.div>

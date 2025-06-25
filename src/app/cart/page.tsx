@@ -87,7 +87,10 @@ export default function CartPage() {
                           whileTap={{ scale: 0.9 }}
                           className="w-8 h-8 flex items-center justify-center rounded-xl bg-green-500 text-white hover:bg-green-600 transition"
                         >
-                          <Plus className="w-4 h-4" />
+                          <Plus
+                            className="w-4 h-4
+                          "
+                          />
                         </motion.button>
                       </div>
                     </div>

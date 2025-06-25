@@ -171,14 +171,14 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                     description: undefined,
                   })
                 }
-                className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 rounded-lg transition"
+                className="w-full bg-[#0AAD0A] hover:bg-green-600 text-white font-semibold py-2 rounded-xl transition"
               >
                 Сагслах
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full border border-gray-300 hover:bg-gray-100 py-2 font-semibold rounded-lg transition "
+                className="w-full border border-gray-300 hover:bg-gray-100 py-2 font-semibold rounded-xl transition "
               >
                 Шууд авах
               </motion.button>
@@ -200,7 +200,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.3 }}
-                    className="bg-[#F3F3F3] border border-[#E0E0E0] rounded-2xl p-4 shadow-sm hover:shadow-md flex flex-col justify-between h-[360px]"
+                    className="bg-[#F3F3F3] border border-[#E0E0E0] rounded-3xl p-4 shadow-sm hover:shadow-md flex flex-col justify-between h-[360px]"
                   >
                     <Link href={`/product/${item.id}`}>
                       <motion.div
@@ -208,7 +208,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                         whileHover={{ scale: 1.02 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <div className="relative w-full h-40 mb-4 rounded-xl overflow-hidden bg-white">
+                        <div className="relative w-full h-40 mb-2 rounded-2xl overflow-hidden bg-white">
                           <img
                             src={item.image}
                             alt={item.title}
