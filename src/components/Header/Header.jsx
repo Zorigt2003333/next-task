@@ -6,7 +6,7 @@ import { ShoppingCart } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 
 export default function Header() {
-  const { cartCount } = useCart();
+  const { uniqueCartCount } = useCart();
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 py-3 bg-white shadow-sm">
@@ -24,7 +24,7 @@ export default function Header() {
       <Link href="/cart" className="relative">
         <div className="flex items-center justify-center w-16 h-10 rounded-full bg-gray-200">
           <ShoppingCart className="w-5 h-5 mr-2" />
-          <span className="text-base font-bold">{cartCount}</span>
+          <span className="text-base font-bold">{uniqueCartCount}</span>
         </div>
       </Link>
     </header>

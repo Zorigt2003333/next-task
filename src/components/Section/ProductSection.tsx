@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import ProductList from '@/app/product/ProductList';
 import { motion } from 'framer-motion';
+import { OptionIcon } from 'lucide-react';
 
 type Props = {
   selectedCategory: string | null;
@@ -66,6 +67,7 @@ export default function ProductSection({ selectedCategory }: Props) {
     );
   }
 
+  const newLocal = 'Бүгд';
   return (
     <section className="flex-1 flex flex-col gap-4">
       <motion.div
@@ -76,7 +78,7 @@ export default function ProductSection({ selectedCategory }: Props) {
       >
         <div className="flex items-center justify-between">
           <motion.h2 variants={itemVariants} className="text-lg font-semibold text-gray-900">
-            {selectedCategory || 'Бүгд'}
+            {selectedCategory || newLocal}
           </motion.h2>
           <motion.select
             variants={itemVariants}

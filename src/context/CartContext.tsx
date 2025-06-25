@@ -3,21 +3,23 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 
 type CartItem = {
-  description: ReactNode;
   id: number;
   title: string;
   price: number;
   image: string;
+  description: ReactNode;
   quantity: number;
 };
 
 type CartContextType = {
   cartItems: CartItem[];
   cartCount: number;
+  uniqueCartCount: number;
   addToCart: (item: Omit<CartItem, 'quantity'>) => void;
   increaseCart: (id: number) => void;
   decreaseCart: (id: number) => void;
   removeFromCart: (id: number) => void;
+  getItemQuantity: (id: number) => number;
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -51,17 +53,24 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setCartItems((prev) => prev.filter((i) => i.id !== id));
   };
 
+  const getItemQuantity = (id: number) => {
+    return cartItems.find((item) => item.id === id)?.quantity || 0;
+  };
+
   const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  const uniqueCartCount = cartItems.length;
 
   return (
     <CartContext.Provider
       value={{
         cartItems,
         cartCount,
+        uniqueCartCount,
         addToCart,
         increaseCart,
         decreaseCart,
         removeFromCart,
+        getItemQuantity,
       }}
     >
       {children}
