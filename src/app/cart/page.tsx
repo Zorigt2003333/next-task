@@ -61,12 +61,12 @@ export default function CartPage() {
                         {(item.price * item.quantity).toLocaleString()}₮
                       </p>
 
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-2">
                         <motion.button
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           onClick={() => removeFromCart(item.id)}
-                          className="text-gray-400 hover:text-red-500 transition-colors"
+                          className="w-8 h-8 flex items-center justify-center rounded-xl border border-gray-300 hover:text-red-500 transition-colors"
                         >
                           <Trash2 className="w-5 h-5" />
                         </motion.button>
