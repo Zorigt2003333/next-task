@@ -11,7 +11,6 @@ export default function Header() {
 
   return (
     <motion.header
-      initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: 'spring', stiffness: 100, damping: 12 }}
       className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 py-3 bg-white shadow-sm"
@@ -32,7 +31,7 @@ export default function Header() {
         <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="flex items-center justify-center w-16 h-10 rounded-full bg-gray-200 transition"
+          className="flex items-center justify-center w-16 h-10 rounded-full border-gray-400 bg-gray-200 transition"
         >
           <ShoppingCart className="w-5 h-5 mr-2" />
           <span className="text-base font-bold">{uniqueCartCount}</span>

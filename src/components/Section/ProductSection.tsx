@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import ProductList from '@/app/product/ProductList';
 import { motion } from 'framer-motion';
-import { OptionIcon } from 'lucide-react';
 
 type Props = {
   selectedCategory: string | null;
