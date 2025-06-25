@@ -118,20 +118,22 @@ export default function ProductList({ selectedCategory }: Props) {
                       <img
                         src={product.image}
                         alt={product.title}
-                        className={`object-contain w-full h-full transition-opacity duration-200 ${
-                          quantity > 0 ? 'opacity-30' : 'opacity-100'
-                        }`}
+                        className="object-contain w-full h-full transition-all duration-200"
                       />
+                      {quantity > 0 && (
+                        <div className="absolute inset-0 bg-gray-800 opacity-40 z-10"></div>
+                      )}
                       {quantity > 0 && (
                         <motion.span
                           initial={{ scale: 0 }}
                           animate={{ scale: 1 }}
-                          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl font-bold drop-shadow"
+                          className="absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl font-bold drop-shadow"
                         >
                           {quantity}
                         </motion.span>
                       )}
                     </motion.div>
+
                     <div className="flex flex-col justify-between gap-1 min-h-[100px]">
                       <motion.p
                         initial={{ opacity: 0 }}
