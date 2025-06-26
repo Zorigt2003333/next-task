@@ -162,15 +162,15 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() =>
-                  addToCart({
-                    id: product.id,
-                    title: product.title,
-                    price: product.price,
-                    image: product.image,
-                    description: undefined,
-                  })
-                }
+                // onClick={() =>
+                //   addToCart({
+                //     id: product.id,
+                //     title: product.title,
+                //     price: product.price,
+                //     image: product.image,
+                //     description: undefined,
+                //   })
+                // }
                 className="w-full bg-[#0AAD0A] hover:bg-green-600 text-white font-semibold py-2 rounded-xl transition"
               >
                 Сагслах

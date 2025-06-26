@@ -6,10 +6,15 @@ import { Minus, Plus, Trash2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function CartPage() {
-  const { cartItems, increaseCart, decreaseCart, removeFromCart } = useCart();
+  const { cartItems, decreaseCart, removeFromCart } = useCart();
+  const { increaseCart } = useCart();
 
   const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const itemCount = cartItems.reduce((count, item) => count + item.quantity, 0);
+
+  function increase(product: any): void {
+    throw new Error('Function not implemented.');
+  }
 
   return (
     <>
@@ -29,7 +34,9 @@ export default function CartPage() {
             animate={{ opacity: 1 }}
             className="text-gray-500 text-center py-20 text-lg"
           >
-            Сагсанд бүтээгдэхүүн алга байна.
+            <div className="title-container center">
+              <p>Сагс хоосон байна.</p>
+            </div>
           </motion.p>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -65,17 +72,8 @@ export default function CartPage() {
                         <motion.button
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
-                          onClick={() => removeFromCart(item.id)}
-                          className="w-8 h-8 flex items-center justify-center rounded-xl border border-gray-300 hover:text-red-500 transition-colors"
-                        >
-                          <Trash2 className="w-5 h-5" />
-                        </motion.button>
-
-                        <motion.button
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
                           onClick={() => decreaseCart(item.id)}
-                          className="w-8 h-8 flex items-center justify-center rounded-xl border border-gray-300 text-gray-600 hover:bg-gray-100 transition"
+                          className="w-8 h-8 flex items-center justify-center rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-100 transition"
                         >
                           <Minus className="w-4 h-4" />
                         </motion.button>
@@ -85,12 +83,22 @@ export default function CartPage() {
                         <motion.button
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
-                          className="w-8 h-8 flex items-center justify-center rounded-xl bg-green-500 text-white hover:bg-green-600 transition"
+                          onClick={() => increaseCart(item.id)}
+                          className="w-8 h-8 flex items-center justify-center rounded-lg bg-green-500 text-white hover:bg-green-600 transition"
                         >
                           <Plus
                             className="w-4 h-4
                           "
                           />
+                        </motion.button>
+
+                        <motion.button
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          onClick={() => removeFromCart(item.id)}
+                          className="w-8 h-8 flex items-center justify-center rounded-lg border border-gray-300 hover:text-red-500 transition-colors"
+                        >
+                          <Trash2 className="w-4 h-4" />
                         </motion.button>
                       </div>
                     </div>
@@ -103,11 +111,7 @@ export default function CartPage() {
               animate={{ opacity: 1, x: 0 }}
               className="bg-white p-3 rounded-2xl shadow-sm border border-gray-200 h-fit lg:sticky lg:top-24 space-y-4"
             >
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 rounded-xl text-sm sm:text-base transition"
-              >
+              <motion.button className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 rounded-xl text-sm sm:text-base transition">
                 Захиалах
               </motion.button>
               <div className="flex justify-between text-sm text-gray-600">
