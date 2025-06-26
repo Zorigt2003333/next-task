@@ -12,10 +12,6 @@ export default function CartPage() {
   const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const itemCount = cartItems.reduce((count, item) => count + item.quantity, 0);
 
-  function increase(product: any): void {
-    throw new Error('Function not implemented.');
-  }
-
   return (
     <>
       <Header />
@@ -29,13 +25,15 @@ export default function CartPage() {
         </motion.h1>
 
         {cartItems.length === 0 ? (
-          <motion.p
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-gray-500 text-center py-20 text-lg"
+            className="text-black text-center py-20 flex flex-col items-center justify-center gap-5"
           >
-            Сагс хоосон байна.
-          </motion.p>
+            <img src="/assets/cart.png" alt="Empty cart" className="w-60 h-auto opacity-80" />
+            <p className="text-lg">Сагс хоосон байна.</p>
+            <h1 className="text-gray-500">Харин боломжууд байсаар л байна</h1>
+          </motion.div>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="lg:col-span-2 space-y-4">
