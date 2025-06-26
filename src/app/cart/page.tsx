@@ -9,6 +9,7 @@ export default function CartPage() {
   const { cartItems, decreaseCart, removeFromCart } = useCart();
   const { increaseCart } = useCart();
 
+  const { uniqueCartCount } = useCart();
   const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const itemCount = cartItems.reduce((count, item) => count + item.quantity, 0);
 
@@ -21,7 +22,7 @@ export default function CartPage() {
           animate={{ opacity: 1, y: 0 }}
           className="font-bold text-gray-800 mb-4"
         >
-          Сагс <span className="text-sm text-gray-500">({itemCount} бараа)</span>
+          Сагс <span className="text-sm text-gray-500">({uniqueCartCount} бараа)</span>
         </motion.h1>
 
         {cartItems.length === 0 ? (
@@ -52,11 +53,9 @@ export default function CartPage() {
                         alt={item.title}
                         className="w-16 h-16 sm:w-20 sm:h-20 object-contain bg-gray-50 rounded-lg border border-gray-200"
                       />
-                      <div className="space-y-1">
-                        <p className="text-sm font-semibold text-gray-900 line-clamp-2">
-                          {item.title}
-                        </p>
-                        <p className="text-xs text-gray-500">{item.description}</p>
+                      <div className=" space-y-1">
+                        <p className="text-xl font-bold text-black">{item.price} ₮</p>
+                        <p className="text-sm text-gray-900 line-clamp-2">{item.title}</p>
                       </div>
                     </div>
                     <div className="flex flex-col justify-between items-end min-h-[100px] min-w-[160px]">
