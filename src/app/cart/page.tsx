@@ -26,15 +26,27 @@ export default function CartPage() {
         </motion.h1>
 
         {cartItems.length === 0 ? (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-black text-center py-20 flex flex-col items-center justify-center gap-5"
-          >
-            <img src="/assets/cart.png" alt="Empty cart" className="w-60 h-auto opacity-80" />
-            <p className="text-lg">Сагс хоосон байна.</p>
-            <h1 className="text-gray-500">Харин боломжууд байсаар л байна</h1>
-          </motion.div>
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className=" text-center py-5 flex flex-col items-center justify-center gap-1"
+            >
+              <img src="/assets/cart.png" alt="Empty cart" className="w-60 h-auto" />
+              <p className="text-lg text-black">Сагс хоосон байна</p>
+              <h1 className="text-gray-500">Харин боломжууд байсаар л байна</h1>
+            </motion.div>
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex justify-center mt-1 w-40 text-white bg-[#0AAD0A] border border-gray-300 rounded-xl py-2 font-semibold hover:bg-green-600 mx-auto"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0 }}
+            >
+              Дэлгүүр хэсэх
+            </motion.button>
+          </>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="lg:col-span-2 space-y-4">

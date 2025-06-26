@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Minus, Plus } from 'lucide-react';
 
 type Product = {
   id: number;
@@ -167,7 +168,7 @@ export default function ProductList({ selectedCategory }: Props) {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => increase(product)}
-                    className="mt-4 w-full bg-white border border-gray-300 rounded-xl py-2 font-semibold hover:bg-gray-100 transition"
+                    className="mt-1 w-full bg-white border border-gray-300 rounded-xl py-2 font-semibold hover:bg-gray-100 transition"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0 }}
@@ -187,15 +188,16 @@ export default function ProductList({ selectedCategory }: Props) {
                       onClick={() => decrease(product.id)}
                       className="w-10 h-10 rounded-xl bg-white border border-gray-300 text-2xl font-bold flex items-center justify-center"
                     >
-                      –
+                      <Minus className="w-4 h-4" />
                     </motion.button>
+
                     <motion.button
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                       onClick={() => increase(product)}
                       className="w-10 h-10 rounded-xl bg-green-500 text-white text-2xl font-bold flex items-center justify-center"
                     >
-                      +
+                      <Plus className="w-4 h-4" />
                     </motion.button>
                   </motion.div>
                 )}
