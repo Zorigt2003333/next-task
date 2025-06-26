@@ -34,9 +34,7 @@ export default function CartPage() {
             animate={{ opacity: 1 }}
             className="text-gray-500 text-center py-20 text-lg"
           >
-            <div className="title-container center">
-              <p>Сагс хоосон байна.</p>
-            </div>
+            Сагс хоосон байна.
           </motion.p>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
