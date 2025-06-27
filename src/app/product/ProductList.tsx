@@ -107,8 +107,8 @@ export default function ProductList({ selectedCategory }: Props) {
                 <Link href={`/product/${product.id}`}>
                   <motion.div
                     className="cursor-pointer flex flex-col gap-3"
-                    whileHover={{ scale: 1.01 }}
-                    transition={{ duration: 0.2 }}
+                    // whileHover={{ scale: 1.01 }}
+                    // transition={{ duration: 0.2 }}
                   >
                     <motion.div
                       className="relative w-full h-45 rounded-2xl overflow-hidden bg-white"
@@ -165,8 +165,8 @@ export default function ProductList({ selectedCategory }: Props) {
                 </Link>
                 {quantity === 0 ? (
                   <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.95 }}
+                    // whileHover={{ scale: 1.02 }}
+                    // whileTap={{ scale: 0.95 }}
                     onClick={() => increase(product)}
                     className="mt-1 w-full bg-white border border-gray-300 rounded-xl py-2 font-semibold hover:bg-gray-100 transition"
                     initial={{ opacity: 0 }}

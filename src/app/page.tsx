@@ -12,9 +12,11 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#F4F4F4]">
       <Header />
-      <main className="flex px-6 pt-22 py-4 gap-6 min-h-screen">
-        <Sidebar onSelectCategory={setSelectedCategory} />
-        <ProductSection selectedCategory={selectedCategory} />
+      <main className="min-h-screen flex items-start justify-center px-6 pt-22 py-4">
+        <div className="flex gap-6 w-full max-w-7xl">
+          <Sidebar onSelectCategory={setSelectedCategory} />
+          <ProductSection selectedCategory={selectedCategory} />
+        </div>
       </main>
     </div>
   );

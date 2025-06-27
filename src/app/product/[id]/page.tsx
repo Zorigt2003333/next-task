@@ -113,7 +113,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
     <>
       <Header />
       <motion.div
-        className="w-full px-6 py-8 pt-20"
+        className="max-w-7xl mx-auto px-6 py-8 pt-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -160,8 +160,8 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
             <p className="text-2xl font-bold mb-6">{product.price.toLocaleString()}₮</p>
             <div className="space-y-3">
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                // whileHover={{ scale: 1.05 }}
+                // whileTap={{ scale: 0.95 }}
                 // onClick={() =>
                 //   addToCart({
                 //     id: product.id,
@@ -176,8 +176,8 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                 Сагслах
               </motion.button>
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                // whileHover={{ scale: 1.05 }}
+                // whileTap={{ scale: 0.95 }}
                 className="w-full border border-gray-300 hover:bg-gray-100 py-2 font-semibold rounded-xl transition "
               >
                 Шууд авах
@@ -205,8 +205,8 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                     <Link href={`/product/${item.id}`}>
                       <motion.div
                         className="cursor-pointer"
-                        whileHover={{ scale: 1.02 }}
-                        transition={{ duration: 0.2 }}
+                        // whileHover={{ scale: 1.02 }}
+                        // transition={{ duration: 0.2 }}
                       >
                         <div className="relative w-full h-40 mb-2 rounded-2xl overflow-hidden bg-white">
                           <img
@@ -226,8 +226,8 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                       </motion.div>
                     </Link>
                     <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+                      // whileHover={{ scale: 1.05 }}
+                      // whileTap={{ scale: 0.95 }}
                       className="mt-4 w-full bg-white border border-gray-300 rounded-xl py-2 font-semibold hover:bg-gray-100 text-sm transition"
                     >
                       Сагслах
